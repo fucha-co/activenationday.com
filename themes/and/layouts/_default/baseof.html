@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html class="no-js" lang="{{ $.Site.LanguageCode | default "en" }}">
+<head>
+    <meta charset="UTF-8">
+
+     {{/* NOTE: the Site's title, and if there is a page title, that is set too */}}
+    <title>{{ block "title" . }}{{ .Site.Title }} {{ with .Title }} | {{ . }}{{ end }}{{ end }}</title>
+    <meta name="description" content="{{ .Site.Params.metadesc | safeHTML }}">
+
+    <!-- If the site is responsive -->
+    <meta name="viewport" content="initial-scale=1.0, maximum-scale=1.0, width=device-width">
+
+    <!-- Force old IE to render properly (compatibility etc) -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+
+    <!-- Page specific meta tags -->
+    <meta property="og:title" content="Active Nation Day">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="http://nowmoveit.com/">
+    <meta property="og:image" content="http://nowmoveit.com/img/fb-share.png">
+    <meta property="og:site_name" content="Lorna Jane">
+    <meta property="og:description" content="Lorna Jane's Active Nation Day. Join us on 24 September 2017 and become part of our global movement to create a more active future.">
+
+    <link rel="icon" href="favicon.ico">
+    <link href="lj/style-1476944133038.css" rel="stylesheet" type="text/css">
+
+    <script src="lj/libs/modernizr-custom-1476944133038.js" type="text/javascript"></script>
+
+
+    {{ .Hugo.Generator }}
+
+    {{/* NOTE: For Production make sure you add `HUGO_ENV="production"` before your build command */}}
+    {{ if eq (getenv "HUGO_ENV") "production" | or (eq .Site.Params.env "production")  }}
+      <META NAME="ROBOTS" CONTENT="INDEX, FOLLOW">
+    {{ else }}
+      <META NAME="ROBOTS" CONTENT="NOINDEX, NOFOLLOW">
+    {{ end }}
+
+     <link href='{{ "dist/main.css" | absURL }}' rel='stylesheet' type="text/css" />
+
+     {{ if .RSSLink }}
+      <link href="{{ .RSSLink }}" rel="alternate" type="application/rss+xml" title="{{ .Site.Title }}" />
+      <link href="{{ .RSSLink }}" rel="feed" type="application/rss+xml" title="{{ .Site.Title }}" />
+      {{ end }}
+
+      {{/* NOTE: These Hugo Internal Templates can be found starting at https://github.com/spf13/hugo/blob/master/tpl/tplimpl/template_embedded.go#L158 */}}
+      {{- template "_internal/opengraph.html" . -}}
+      {{- template "_internal/google_news.html" . -}}
+      {{- template "_internal/schema.html" . -}}
+      {{- template "_internal/twitter_cards.html" . -}}
+
+      {{ if eq (getenv "HUGO_ENV") "production" | or (eq .Site.Params.env "production")  }}
+        {{ template "_internal/google_analytics_async.html" . }}
+      {{ end }}
+  </head>
+
+  <body ontouchstart="" class="ma0{{ with getenv "HUGO_ENV" }} {{ . }}{{ end }}">
+
+      {{ block "header" . }}{{ partial "site-header.html" .}}{{ end }}
+
+      <!-- start non-menu-container -->
+       <div class="non-menu-container js-non-menu-container">
+
+           <button type="button" class="menu-trigger btn js-menu-trigger">
+               <div class="icon inline-svg js-inline-svg js-configured" data-use="#svg-icon-menu-toggle-01"><div class="holder"><svg xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 20 20"><title>icon-menu-toggle-01</title><g class="open-icon" fill="#EA008A"><path class="shape" d="M0 0h20v4H0zM0 8h20v4H0zM0 16h20v4H0z"></path></g><g class="close-icon" fill="#EA008A"><path class="shape" d="M19.204 3.864l-15.34 15.34-3.068-3.068L16.136.796zM3.864.796l15.34 15.34-3.068 3.068L.796 3.864z"></path></g></svg></div></div>
+           </button>
+
+
+            <!-- a feature -->
+            <div id="home" class="section__a-feature js-track-section" data-section="Landing">
+                <div class="logo-container">
+                    <div class="content-wrap">
+                        <h1 class="logo">
+                            <img class="logo-active-nation-day-img" src="img/optimised/logo-active-nation-day-2017.png" alt="Active Nation Day. September 24, 2017">
+                        </h1>
+                    </div>
+                </div>
+            </div>
+
+            <!-- section: what is active nation day -->
+            <section id="about" class="section__what-is-and video-section js-track-section" data-section="about">
+                <div class="gradientwrapper">
+                </div>
+                <div class="contents">
+
+                    <div class="cta">
+                        <div class="content-wrap">
+
+                            <div class="text-container">
+                                <h2 class="heading">YOUR MOVE MATTERS</h2>
+                            </div>
+
+                        </div>
+                    </div>
+
+
+                    <div class="info">
+                        <div class="content-wrap">
+                            <div class="description body-text">
+                                <p>Five years ago, Lorna Jane Clarkson created Active Nation Day.</p>
+                                <p>Lorna’s vision was to dedicate the last Sunday of September every year to inspiring each other to move in a bid to fight the growing number of alarming health issues facing the world today.</p>
+                                <p>Since 1980, worldwide obesity has more than doubled while 31% of the world’s population languishes with insufficient exercise.</p>
+                                <p>Heart disease has become the leading cause of death worldwide.</p>
+                                <p>Our aim is to have a national day of Active Living recognised on the Australian calendar and then the world!</p>
+                                <p>Join the 60,000 voices who want a recognised Active Nation Day.</p>
+                            </div>
+                            <div class="btn-more">
+                                <a href="http://www.activenationday.com/sign-petition.html" class="btn-more-z btn btn-solid-1 btn-solid-pink btn-fixed-width js-internal-link" data-track-section="Landing" data-track-label="Sign it now">Sign it now</a>
+                            </div>
+                        </div>
+                    </div>
+
+
+
+                </div>
+            </section>
+
+            <!-- section: when and where -->
+            <section id="thanks" class="section__thanks js-track-section" data-section="thanks">
+
+                <div class="cta"><div class="content-wrap"><div class="text-container"><h2 class="heading">THANK-YOU</h2></div></div></div>
+
+                <div class="info-container">
+                    <div class="content-wrap">
+
+                        <div class="info-group copy">
+
+                            <div class="description body-text">
+                                <h2 class="heading">THANK-YOU</h2>
+                                <p>In 2016 we celebrated our fifth annual Active Nation Day. With events in 16 countries including Australia, US, UK, South Africa, Dubai, Thailand and France - together we moved over 15 million kilometres!</p>
+                                <p>Join us on Sunday 24 September 2017 to show your support. </p>
+                                <p><strong>SEE THE MOVEMENT IN ACTION</strong></p>
+                                <a href="//www.youtube.com/watch?v=LGWnBUVrxD8e" class="btn btn-solid-1 btn-solid-pink btn-fixed-width js-external-link" data-multi-page-link="true">WATCH NOW</a>
+                            </div>
+                        </div>
+
+                        <div class="info-group video">
+                            <div class="description body-text">
+                                <div class="videoWrapper">
+
+                                  <!--video controls="" width="560" height="315">
+                                    <source src="video/LGWnBUVrxD8.mp4" type="video/mp4">
+                                  </video-->
+
+                                  <iframe width="560" height="315" src="//www.youtube.com/embed/LGWnBUVrxD8" frameborder="0" allowfullscreen=""></iframe>
+
+                                </div>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+                </div>
+            </section>
+
+
+            <!-- section: when and where -->
+            <section id="gallery" class="section__gallery js-track-section" data-section="gallery">
+
+                <div class="cta">
+                    <div class="content-wrap">
+                        <div class="text-container">
+                            <h2 class="heading">VIEW THE 2016 GALLERY</h2>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="info-container">
+                    <div class="content-wrap">
+
+                        <div class="img"><img src="img/optimised/gallery-2016-1.jpg" /></div>
+                        <div class="img"><img src="img/optimised/gallery-2016-2.jpg" /></div>
+                        <div class="img"><img src="img/optimised/gallery-2016-3.jpg" /></div>
+                        <div class="img"><img src="img/optimised/gallery-2016-4.jpg" /></div>
+                        <div class="img"><img src="img/optimised/gallery-2016-5.jpg" /></div>
+                        <div class="img"><img src="img/optimised/gallery-2016-6.jpg" /></div>
+
+                        <div class="center"><a href="//www.facebook.com/lornajane.active/photos/?tab=album&amp;album_id=1110693078966343" class="btn btn-solid-1 btn-solid-pink btn-fixed-width js-external-link" data-multi-page-link="true">VIEW NOW</a></div>
+
+
+                    </div>
+                </div>
+            </section>
+
+
+            <!-- section: sisterhood -->
+            <section id="sisterhood" class="section__sisterhood js-track-section" data-section="sisterhood">
+
+
+
+                <div class="moves-completed">
+                    <div class="content-wrap">
+                        <div class="stats-container js-stats-container">
+
+                        </div>
+
+                        <div class="links">
+
+                            <a href="http://nowmoveit.com/activity" class="link btn-outline-1 btn-outline-white js-external-link" data-track-section="Sisterhood">See who's moving</a>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+      <main class="" role="main">
+        {{ block "main" . }}{{ end }}
+      </main>
+
+          {{ block "footer" . }}{{ partial "site-footer.html" . }}{{ end }}
+
+        </div>
+        <!-- .non-menu-container -->
+    </div>
+    <!-- #wrapper -->
+
+    {{ block "scripts" . }}{{ partial "site-scripts.html" . }}{{ end }}
+
+  </body>
+</html>
