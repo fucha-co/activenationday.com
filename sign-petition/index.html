@@ -23,6 +23,9 @@
 
   <link rel="icon" href="favicon.ico">
   <link href="/css/style-1498546195570.css" rel="stylesheet" type="text/css">
+  <style>
+    .dn { display: none; }
+  </style>
   <script src="/js/libs/modernizr-custom-1498546195570.js" type="text/javascript"></script>
 
 	
@@ -98,9 +101,20 @@
             <p class="">Take action to encourage recognition and support of Active Nation Day and community awareness of the importance of Active Living.</p>
         </div>
 
-        <form data-netlify="true" action='/thank-you/' name="Test Sign Petition" class="form" data-petition-form>
+        <form
+            data-netlify="true"
+            action='/thank-you/'
+            name="Test Sign Petition"
+            class="form"
+            netlify-honeypot="botblocker"
+            data-petition-form
+        >
 
             <div class="pre-submit">
+
+                <p class="dn">
+                    <label>Don’t fill this out: <input name="bot-field"></label>
+                </p>
 
                 <div class="two-col-fields clearfix">
                     <div class="col">
