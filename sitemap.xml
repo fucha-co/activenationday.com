@@ -3,45 +3,43 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
-    <loc>https://www.activenationday.com/register-event/</loc>
+    <loc>https://and.netlify.com/sign-petition/</loc>
     <lastmod>2017-08-16T19:13:53+10:00</lastmod>
   </url>
   
   <url>
-    <loc>https://www.activenationday.com/sign-petition/</loc>
+    <loc>https://and.netlify.com/about/</loc>
     <lastmod>2017-08-16T19:13:53+10:00</lastmod>
   </url>
   
   <url>
-    <loc>https://www.activenationday.com/about/</loc>
+    <loc>https://and.netlify.com/register-event/</loc>
     <lastmod>2017-08-16T19:13:53+10:00</lastmod>
   </url>
   
   <url>
-    <loc>https://www.activenationday.com/events/</loc>
+    <loc>https://and.netlify.com/thank-you/</loc>
     <lastmod>2017-08-16T19:13:53+10:00</lastmod>
   </url>
   
   <url>
-    <loc>https://www.activenationday.com/tags/</loc>
+    <loc>https://and.netlify.com/events/</loc>
+    <lastmod>2017-08-16T19:13:53+10:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://and.netlify.com/</loc>
     <lastmod>2017-08-16T19:13:53+10:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>https://www.activenationday.com/</loc>
-    <lastmod>2017-08-16T19:13:53+10:00</lastmod>
+    <loc>https://and.netlify.com/categories/</loc>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>https://www.activenationday.com/categories/</loc>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://www.activenationday.com/tags/</loc>
-    <lastmod>2017-08-16T19:13:53+10:00</lastmod>
+    <loc>https://and.netlify.com/tags/</loc>
     <priority>0</priority>
   </url>
   
