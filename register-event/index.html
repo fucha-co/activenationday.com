@@ -108,16 +108,20 @@
             </div>
 
 
-            <form
-              data-netlify="true"
+            <form data-register-event-form
               name="Test Register Event"
-              action="/thank-you/"
               class="form"
+              data-netlify="true"
+              method="POST"
+              action="/thank-you/"
               netlify-honeypot="botblocker"
-              data-register-event-form
-            >
+               >
 
                 <div class="pre-submit" data-pre-submission>
+
+                    <p class="dn">
+                        <label>Don’t fill this out: <input name="bot-field"></label>
+                    </p>
 
                     <div class="two-col-fields clearfix">
                         <div class="col">
@@ -209,7 +213,7 @@
                                     <div class="file-picker-btn btn-solid-1 btn-solid-pink">Upload</div>
                                 </div>
 
-                                <div class="label error" data-image-upload-error></div>
+                                <div class="label error" ></div>
                             </div>
                         </div>
 
@@ -225,7 +229,7 @@
                         <div class="checkbox-inner-container">
                             <input type="checkbox" name="terms" id="terms" class="checkbox-input" value="Yes">
                             <label for="terms" class="checkbox-label">
-                                <span>I accept the <a href="terms.html" target="_blank">Terms and conditions</a></span>
+                                <span>I accept the <a href="/terms/">Terms and conditions</a></span>
                             </label>
                             <div class="checkbox-indicator checkbox-indicator" aria-hidden="true"></div>
                         </div>
@@ -241,7 +245,7 @@
                         </div>
                     </div>
 
-                    <div class="error-container general-error-container" data-error-container></div>
+                    
 
                     <button type="submit" class="submit-btn btn-solid-1 btn-solid-pink with-hover btn" >REGISTER YOUR EVENT</button>
 

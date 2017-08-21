@@ -30,6 +30,15 @@
     </item>
     
     <item>
+      <title>About</title>
+      <link>https://and.netlify.com/terms/</link>
+      <pubDate>Wed, 16 Aug 2017 19:13:53 +1000</pubDate>
+      
+      <guid>https://and.netlify.com/terms/</guid>
+      <description>About Content</description>
+    </item>
+    
+    <item>
       <title>Register Your Event</title>
       <link>https://and.netlify.com/register-event/</link>
       <pubDate>Wed, 16 Aug 2017 19:13:53 +1000</pubDate>
