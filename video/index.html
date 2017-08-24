@@ -6,7 +6,7 @@
 	<meta name="viewport" content="initial-scale=1.0, maximum-scale=1.0, width=device-width">
   
   <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-	<title>events</title>
+	<title>Video</title>
 	
 	
 
@@ -75,65 +75,32 @@
       </button>
 
 
-  
-    <div class="section__events">
+  *
+    <div class="section__generic-form sign-petition-detail">
 
-    <div class="header">
+    
 
-        <div class="content-wrap">
 
-            <h1 class="heading heading-singe-page"><span class="head-body">Registered<br/>Events</span></h1>
+    <div class="content-wrap">
 
-            <div class="header-description body-text white-text-shadow-md">
-                
+        <div class="description body-text">
+            <h1 class="heading">Watch the Video</h1>
+
+            <div class="header-description">
+              
+<div style="position: relative; padding-bottom: 56.25%; padding-top: 30px; height: 0; overflow: hidden;">
+  <iframe src="//www.youtube.com/embed/N8jggIpH2yg" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;" allowfullscreen frameborder="0"></iframe>
+ </div>
+
+
             </div>
 
-            <a href='/register-event' class="btn btn-solid-1 btn-solid-pink btn-fixed-width">Register your own event</a>
+
+
 
         </div>
 
-    </div>
 
-
-    <div class="main-content" data-events-api="/api-json/event_list.php" data-events-viewer>
-        <div class="content-wrap">
-
-            <div class="toolbar clearfix">
-                <div class="left-md">
-                    <h2 class="heading heading--alt-style pink-text-highlight">Sister Events</h2>
-                </div>
-
-                <div class="right-md">
-                    <form class="search-container form" data-search-form>
-                        <div class="field">
-                            <label for="postcode" class="label">Search by postcode</label>
-
-                            <div class="inner-container">
-                                <input id="postcode" name="postcode" type="text" class="text-input" placeholder="2042" data-input>
-                                <button type="submit" class="submit-btn btn btn-solid-1 btn-solid-pink">Search</button>
-                            </div>
-                        </div>
-                    </form>
-
-                    <button type="button" class="btn-clear-search btn btn-outline-1 btn-outline-pink" data-btn-clear-search>Show all</button>
-                </div>
-
-                <div class="search-form-error-container">
-                    <label class="error">Please enter a valid 4 digit postcode.</label>
-                </div>
-            </div>
-
-            <div class="items-container show-loader" data-items-container>
-
-                <div class="items" tabindex="0" data-items></div>
-
-                
-
-            </div>
-
-            <div class="items-pagination" data-pagination></div>
-
-        </div>
     </div>
 
 </div>
