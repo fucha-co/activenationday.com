@@ -141,7 +141,7 @@
 
                     <div class="field">
                         <label for="email" class="label">Email address</label>
-                        <input type="email" id="email" name="email" class="text-input" placeholder="Email">
+                        <input type="email" id="email" name="email" class="text-input" placeholder="Email" required>
                     </div>
 
 
@@ -412,39 +412,25 @@
 
                     <div class="field">
                         <label for="city" class="label">City</label>
-                        <input type="text" id="city" name="city" class="text-input" placeholder="Enter the city of your event">
+                        <input type="text" id="city" name="city" class="text-input" placeholder="Enter the city of your event" required>
                     </div>
-
-
-
 
                     <div class="two-col-fields clearfix">
 
                         <div class="col">
-                            <div class="field">
-                                <label for="state" class="label">State</label>
 
-                                <div class="custom-select">
-                                    <select name="state" id="state" data-target="[data-postcode-field]" data-state-select>
-                                        <option disabled selected>Select</option>
-                                        <option value="NSW">NSW</option>
-                                        <option value="VIC">VIC</option>
-                                        <option value="TAS">TAS</option>
-                                        <option value="SA">SA</option>
-                                        <option value="ACT">ACT</option>
-                                        <option value="WA">WA</option>
-                                        <option value="NT">NT</option>
-                                        <option value="QLD">QLD</option>
-                                        <option value="OA">Outside Australia</option>
-                                    </select>
-                                </div>
+                            <div class="field">
+                                <label for="state" class="label">state</label>
+                                <input type="text" id="state" name="state" class="text-input" placeholder="Enter the state of your event" required>
                             </div>
+
+                            
                         </div>
 
                         <div class="col">
                             <div class="field" data-postcode-field>
                                 <label for="postcode" class="label">Postcode</label>
-                                <input type="tel" id="postcode" name="postcode" class="text-input" placeholder="e.g. 4000">
+                                <input type="tel" id="postcode" name="postcode" class="text-input" placeholder="e.g. 4000" required>
                             </div>
                         </div>
 
@@ -484,7 +470,7 @@
 
                     <div class="field checkbox-field">
                         <div class="checkbox-inner-container">
-                            <input type="checkbox" name="terms" id="terms" class="checkbox-input" value="Yes">
+                            <input type="checkbox" name="terms" id="terms" class="checkbox-input" value="Yes" required>
                             <label for="terms" class="checkbox-label">
                                 <span>I accept the <a href="/terms/">Terms and conditions</a></span>
                             </label>
