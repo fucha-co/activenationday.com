@@ -39,6 +39,15 @@
     </item>
     
     <item>
+      <title>Events</title>
+      <link>https://and.netlify.com/events/</link>
+      <pubDate>Wed, 16 Aug 2017 19:13:53 +1000</pubDate>
+      
+      <guid>https://and.netlify.com/events/</guid>
+      <description></description>
+    </item>
+    
+    <item>
       <title>Register Your Event</title>
       <link>https://and.netlify.com/register-event/</link>
       <pubDate>Wed, 16 Aug 2017 19:13:53 +1000</pubDate>
@@ -63,15 +72,6 @@
       
       <guid>https://and.netlify.com/video/</guid>
       <description>   </description>
-    </item>
-    
-    <item>
-      <title>events</title>
-      <link>https://and.netlify.com/events/</link>
-      <pubDate>Wed, 16 Aug 2017 19:13:53 +1000</pubDate>
-      
-      <guid>https://and.netlify.com/events/</guid>
-      <description></description>
     </item>
     
   </channel>
