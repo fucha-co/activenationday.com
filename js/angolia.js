@@ -1,4 +1,4 @@
-<script>
+
 
 // var algoliasearch = require('algoliasearch');
 // var algoliasearch = require('algoliasearch/reactnative');
@@ -67,6 +67,3 @@ search.addWidget(
 
 search.start();
 
-
-
-</script>
