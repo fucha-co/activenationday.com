@@ -1,69 +1,141 @@
+/* global instantsearch */
 
-
-// var algoliasearch = require('algoliasearch');
-// var algoliasearch = require('algoliasearch/reactnative');
-// var algoliasearch = require('algoliasearch/lite');
-// import algoliasearch from 'algoliasearch';
-//
-// or just use algoliasearch if you are using a <script> tag
-// if you are using AMD module loader, algoliasearch will not be defined in window,
-// but in the AMD modules of the page
-
-var client = algoliasearch("G9HWOSPASU", "a40176975e801b17564a12e02c163e42");
-var index = client.initIndex('sample');
-
-
-
-index.setSettings({
-  searchableAttributes: [
-    'brand',
-    'name',
-    'categories',
-    'unordered(description)',
-  ],
-  customRanking: ['desc(popularity)'],
-});
-
-
-
-
-var search = instantsearch({
-  // Replace with your own values
+app({
   appId: 'G9HWOSPASU',
-  apiKey: 'a40176975e801b17564a12e02c163e42', // search only API key, no ADMIN key
-  indexName: 'sample',
-  urlSync: true
+  apiKey: '993d94d6a60d020e105d15d176b29824',
+  indexName: 'AND',
 });
 
+function app(opts) {
+  const search = instantsearch({
+    appId: opts.appId,
+    apiKey: opts.apiKey,
+    indexName: opts.indexName,
+    urlSync: true,
+  });
+
+  search.addWidget(
+    instantsearch.widgets.searchBox({
+      container: '#search-input',
+      placeholder: 'Search for events',
+    })
+  );
+
+  search.addWidget(
+    instantsearch.widgets.hits({
+      container: '#hits',
+      hitsPerPage: 10,
+      templates: {
+        item: getTemplate('hit'),
+        empty: getTemplate('no-results'),
+      },
+    })
+  );
+
+  search.addWidget(
+    instantsearch.widgets.stats({
+      container: '#stats',
+    })
+  );
+
+  search.addWidget(
+    instantsearch.widgets.sortBySelector({
+      container: '#sort-by',
+      autoHideContainer: true,
+      indices: [{
+        name: opts.indexName, label: 'Most relevant',
+      }, {
+        name: `${opts.indexName}_price_asc`, label: 'Lowest price',
+      }, {
+        name: `${opts.indexName}_price_desc`, label: 'Highest price',
+      }],
+    })
+  );
+
+  search.addWidget(
+    instantsearch.widgets.pagination({
+      container: '#pagination',
+      scrollTo: '#search-input',
+    })
+  );
+
+  search.addWidget(
+    instantsearch.widgets.refinementList({
+      container: '#name',
+      attributeName: 'name',
+      sortBy: ['isRefined', 'count:desc', 'name:asc'],
+      limit: 10,
+      operator: 'and',
+      templates: {
+        header: getHeader('Name'),
+      },
+    })
+  );
+
+  search.addWidget(
+    instantsearch.widgets.refinementList({
+      container: '#country',
+      attributeName: 'country',
+      sortBy: ['isRefined', 'count:desc', 'name:asc'],
+      limit: 10,
+      operator: 'or',
+      templates: {
+        header: getHeader('Country'),
+      },
+    })
+  );
+
+  search.addWidget(
+    instantsearch.widgets.refinementList({
+      container: '#city',
+      attributeName: 'city',
+      sortBy: ['isRefined', 'count:desc', 'name:asc'],
+      limit: 10,
+      operator: 'or',
+      templates: {
+        header: getHeader('City'),
+      },
+    })
+  );
+
+  search.addWidget(
+    instantsearch.widgets.refinementList({
+      container: '#state',
+      attributeName: 'state',
+      sortBy: ['isRefined', 'count:desc', 'name:asc'],
+      limit: 10,
+      operator: 'or',
+      searchForFacetValues: {
+        placeholder: 'Search for states',
+        templates: {
+          noResults: '<div class="sffv_no-results">No matching states.</div>',
+        },
+      },
+      templates: {
+        header: getHeader('State'),
+      },
+    })
+  );
+
+  search.addWidget(
+    instantsearch.widgets.rangeSlider({
+      container: '#postcode',
+      attributeName: 'postcode',
+      templates: {
+        header: getHeader('Postcode'),
+      },
+    })
+  );
 
 
-search.addWidget(
-  instantsearch.widgets.searchBox({
-    container: '#search-input'
-  })
-);
 
+  search.start();
+}
 
+function getTemplate(templateName) {
+  return document.querySelector(`#${templateName}-template`).innerHTML;
+}
 
-search.addWidget(
-  instantsearch.widgets.hits({
-    container: '#hits',
-    hitsPerPage: 10,
-    templates: {
-      item: document.getElementById('hit-template').innerHTML,
-      empty: "We didn't find any results for the search <em>\"{{query}}\"</em>"
-    }
-  })
-);
-
-
-
-search.addWidget(
-  instantsearch.widgets.pagination({
-    container: '#pagination'
-  })
-);
-
-
-search.start();
-
+function getHeader(title) {
+  return `<h5>${title}</h5>`;
+}
