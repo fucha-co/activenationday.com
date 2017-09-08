@@ -1,9 +1,9 @@
 /* global instantsearch */
 
 app({
-  appId: 'latency',
-  apiKey: '6be0576ff61c053d5f9a3225e2a90f76',
-  indexName: 'instant_search',
+  appId: 'G9HWOSPASU',
+  apiKey: '993d94d6a60d020e105d15d176b29824',
+  indexName: 'AND',
 });
 
 function app(opts) {
@@ -17,7 +17,7 @@ function app(opts) {
   search.addWidget(
     instantsearch.widgets.searchBox({
       container: '#search-input',
-      placeholder: 'Search for products',
+      placeholder: 'Search for events',
     })
   );
 
@@ -38,81 +38,96 @@ function app(opts) {
     })
   );
 
-  search.addWidget(
-    instantsearch.widgets.sortBySelector({
-      container: '#sort-by',
-      autoHideContainer: true,
-      indices: [{
-        name: opts.indexName, label: 'Most relevant',
-      }, {
-        name: `${opts.indexName}_price_asc`, label: 'Lowest price',
-      }, {
-        name: `${opts.indexName}_price_desc`, label: 'Highest price',
-      }],
-    })
-  );
+  //search.addWidget(
+    //instantsearch.widgets.sortBySelector({
+      //container: '#sort-by',
+      //autoHideContainer: true,
+      //indices: [{
+        //name: opts.indexName, label: 'Most relevant',
+      //}, {
+        //name: `${opts.indexName}_price_asc`, label: 'Lowest price',
+      //}, {
+        //name: `${opts.indexName}_price_desc`, label: 'Highest price',
+      //}],
+    //})
+  //);
 
-  search.addWidget(
-    instantsearch.widgets.pagination({
-      container: '#pagination',
-      scrollTo: '#search-input',
-    })
-  );
-
-  search.addWidget(
-    instantsearch.widgets.refinementList({
-      container: '#category',
-      attributeName: 'categories',
-      sortBy: ['isRefined', 'count:desc', 'name:asc'],
-      limit: 10,
-      operator: 'or',
-      templates: {
-        header: getHeader('Category'),
-      },
-    })
-  );
+  //search.addWidget(
+    //instantsearch.widgets.pagination({
+      //container: '#pagination',
+      //scrollTo: '#search-input',
+    //})
+  //);
 
   search.addWidget(
     instantsearch.widgets.refinementList({
-      container: '#brand',
-      attributeName: 'brand',
-      sortBy: ['isRefined', 'count:desc', 'name:asc'],
-      limit: 10,
-      operator: 'or',
-      searchForFacetValues: {
-        placeholder: 'Search for brands',
-        templates: {
-          noResults: '<div class="sffv_no-results">No matching brands.</div>',
-        },
-      },
-      templates: {
-        header: getHeader('Brand'),
-      },
-    })
-  );
-
-  search.addWidget(
-    instantsearch.widgets.rangeSlider({
-      container: '#price',
-      attributeName: 'price',
-      templates: {
-        header: getHeader('Price'),
-      },
-    })
-  );
-
-  search.addWidget(
-    instantsearch.widgets.refinementList({
-      container: '#type',
-      attributeName: 'type',
+      container: '#name',
+      attributeName: 'name',
       sortBy: ['isRefined', 'count:desc', 'name:asc'],
       limit: 10,
       operator: 'and',
       templates: {
-        header: getHeader('Type'),
+        header: getHeader('Name'),
       },
     })
   );
+
+  search.addWidget(
+    instantsearch.widgets.refinementList({
+      container: '#country',
+      attributeName: 'country',
+      sortBy: ['isRefined', 'count:desc', 'name:asc'],
+      limit: 10,
+      operator: 'or',
+      templates: {
+        header: getHeader('Country'),
+      },
+    })
+  );
+
+  //search.addWidget(
+    //instantsearch.widgets.refinementList({
+    //  container: '#city',
+    //  attributeName: 'city',
+    //  sortBy: ['isRefined', 'count:desc', 'name:asc'],
+    //  limit: 10,
+    //  operator: 'or',
+    //  templates: {
+    //    header: getHeader('City'),
+    //  },
+    //})
+  //);
+
+ // search.addWidget(
+   // instantsearch.widgets.refinementList({
+   //   container: '#state',
+   //   attributeName: 'state',
+   //   sortBy: ['isRefined', 'count:desc', 'name:asc'],
+   //   limit: 10,
+   //   operator: 'or',
+   //   searchForFacetValues: {
+   //     placeholder: 'Search for states',
+   //     templates: {
+   //       noResults: '<div class="sffv_no-results">No matching states.</div>',
+   //     },
+   //   },
+   //   templates: {
+   //     header: getHeader('State'),
+   //   },
+   // })
+  //);
+
+  //search.addWidget(
+    //instantsearch.widgets.rangeSlider({
+      //container: '#postcode',
+      //attributeName: 'postcode',
+      //templates: {
+        //header: getHeader('Postcode'),
+      //},
+    //})
+  //);
+
+
 
   search.start();
 }
