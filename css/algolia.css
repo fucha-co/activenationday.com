@@ -91,7 +91,8 @@ header img {
   border-bottom: 1px solid #eee;
 }
 .hit-name {
-  margin: 0;
+  //margin: 0;
+  //margin-bottom: 0;
 }
 .hit-image {
   display: inline-block;
@@ -104,7 +105,7 @@ header img {
 }
 .hit-content {
   font-size: 13px;
-  font-weight: 300;
+  //font-weight: 300;
   display: inline-block;
   width: 81%;
   margin-left: 3%;
@@ -132,11 +133,11 @@ header img {
 .hit-content em {
   font-style: normal;
   color: #ea008a;
-  border-bottom: solid 1px rgba(244, 107, 91, 0.5);
+  border-bottom: solid 1px #ea008a;
 }
 
 .hit-content p {
-  font-size: 13px;
+  font-size: 18px;
 }
 
 .hit-description em {
@@ -257,7 +258,7 @@ header img {
 /* FACETS */
 .facet {
   margin-bottom: 24px;
-  font-size: 14px;
+  //font-size: 14px;
   color: #000;
 }
 .facet h5 {
