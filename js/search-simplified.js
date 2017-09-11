@@ -17,7 +17,7 @@ function app(opts) {
   search.addWidget(
     instantsearch.widgets.searchBox({
       container: '#search-input',
-      placeholder: 'Type here to search by city, country, or postcode',
+      placeholder: 'Type here to search by City, State, or Postcode',
     })
   );
 
@@ -78,7 +78,7 @@ function app(opts) {
       attributeName: 'country',
       sortBy: ['isRefined', 'count:desc', 'name:asc'],
       limit: 10,
-      operator: 'or',
+      operator: 'and',
       templates: {
         header: getHeader('Country'),
       },
@@ -92,16 +92,37 @@ function app(opts) {
     //})
   //);
 
+  search.addWidget(
+    instantsearch.widgets.refinementList({
+      container: '#city',
+      attributeName: 'city',
+      sortBy: ['isRefined', 'count:desc', 'name:asc'],
+      limit: 10,
+      operator: 'and',
+      templates: {
+        header: getHeader('City'),
+      },
+    })
+  );
+
   //search.addWidget(
-    //instantsearch.widgets.refinementList({
-    //  container: '#city',
-    //  attributeName: 'city',
-    //  sortBy: ['isRefined', 'count:desc', 'name:asc'],
-    //  limit: 10,
-    //  operator: 'or',
-    //  templates: {
-    //    header: getHeader('City'),
-    //  },
+    //instantsearch.widgets.numericRefinementList({
+      //container: '#postcode',
+      //attributeName: 'postcode',
+      //options: [
+        //{name: 'All'},
+        //{start: 0800, end: 0899, name: 'NT'},
+        //{start: 2000, end: 2999, name: 'NSW'},
+        //{start: 2600, end: 2920, name: 'ACT'},
+        //{start: 3000, end: 3999, name: 'VIC'},
+        //{start: 4000, end: 4999, name: 'QLD'},
+        //{start: 5000, end: 5799, name: 'SA'},
+        //{start: 6000, end: 6797, name: 'WA'},
+        //{start: 7000, end: 7799, name: 'TAS'}
+      //],
+      //templates: {
+        //header: 'Postcode'
+      //}
     //})
   //);
 
