@@ -52,12 +52,12 @@ function app(opts) {
     //})
   //);
 
-  //search.addWidget(
-    //instantsearch.widgets.pagination({
-      //container: '#pagination',
-      //scrollTo: '#search-input',
-    //})
-  //);
+  search.addWidget(
+    instantsearch.widgets.pagination({
+      container: '#pagination',
+      scrollTo: '#search-input',
+    })
+  );
 
   search.addWidget(
     instantsearch.widgets.refinementList({
@@ -84,6 +84,13 @@ function app(opts) {
       },
     })
   );
+
+  //search.addWidget(
+    //instantsearch.widgets.currentRefinedValues({
+      //container: '#current-refined-values',
+      //clearAll: 'after'
+    //})
+  //);
 
   //search.addWidget(
     //instantsearch.widgets.refinementList({
