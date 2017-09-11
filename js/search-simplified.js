@@ -17,7 +17,7 @@ function app(opts) {
   search.addWidget(
     instantsearch.widgets.searchBox({
       container: '#search-input',
-      placeholder: 'Type here to search for events',
+      placeholder: 'Type here to search by city, country, or postcode',
     })
   );
 
