@@ -77,7 +77,7 @@ function app(opts) {
       container: '#country',
       attributeName: 'country',
       sortBy: ['isRefined', 'count:desc', 'name:asc'],
-      limit: 10,
+      limit: 20,
       operator: 'and',
       templates: {
         header: getHeader('Country'),
