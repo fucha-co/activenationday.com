@@ -17,7 +17,7 @@ function app(opts) {
   search.addWidget(
     instantsearch.widgets.searchBox({
       container: '#search-input',
-      placeholder: 'Type here to search by City, State, or Postcode',
+      placeholder: 'Type here to search by City, Suburb, or Postcode',
     })
   );
 

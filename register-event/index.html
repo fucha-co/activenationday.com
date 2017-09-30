@@ -207,6 +207,7 @@
 
                     <p class="dn">
                         <label>Don’t fill this out: <input name="bot-field"></label>
+                        <input type="text" name="published" id="published" placeholder="no">
                     </p>
 
                     <div class="two-col-fields clearfix">
@@ -230,8 +231,6 @@
                         <input type="email" id="email" name="email" class="text-input" placeholder="Email" required>
                     </div>
 
-                    
-
 
                     <div class="field">
                         <label for="name" class="label">Event Name</label>
@@ -241,6 +240,17 @@
                     <div class="field">
                         <label for="description" class="label">Event Description</label>
                         <textarea rows="2" id="description" name="description" class="text-input" placeholder="Describe your event in 20 words or less"></textarea>
+                    </div>
+
+                    <div class="field">
+                        <label for="priority" class="label">Event Type</label>
+                        <div class="custom-select">
+                            <select name="priority" id="priority">
+                                <option disabled selected>Select</option>
+                                <option value="2">Official Lorna Jane Event</option>
+                                <option value="3">Additional Event (added by public)</option>
+                            </select>
+                        </div>
                     </div>
 
                     <div class="field">
@@ -528,8 +538,6 @@
                     <div class="two-col-fields clearfix">
 
                         <div class="col">
-
-
 
                             <div class="field">
                                 <label for="time" class="label">Event time</label>
