@@ -6,12 +6,16 @@ app({
   indexName: 'AND',
 });
 
+
 function app(opts) {
   const search = instantsearch({
     appId: opts.appId,
     apiKey: opts.apiKey,
     indexName: opts.indexName,
     urlSync: true,
+    searchParameters: {
+        filters: 'published:yes'
+      }
   });
 
   search.addWidget(
