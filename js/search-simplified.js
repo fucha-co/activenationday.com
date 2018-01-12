@@ -21,14 +21,14 @@ function app(opts) {
   search.addWidget(
     instantsearch.widgets.searchBox({
       container: '#search-input',
-      placeholder: 'Type here to search by City, Suburb, or Postcode',
+      placeholder: 'Find Type here to search by City, Suburb, or Postcode',
     })
   );
 
   search.addWidget(
     instantsearch.widgets.hits({
       container: '#hits',
-      hitsPerPage: 10,
+      hitsPerPage: 20,
       templates: {
         item: getTemplate('hit'),
         empty: getTemplate('no-results'),
