@@ -55,7 +55,7 @@ header img {
   outline: 0;
 }
 #search-input input:focus {
-  border-color: #30a137;
+  border-color: #ea008a;
 }
 #search-input input::-webkit-input-placeholder, #search-input input:-moz-placeholder, #search-input input:-moz-placeholder, #search-input input:-ms-input-placeholder {
   font-weight: 100;
@@ -132,8 +132,8 @@ header img {
 
 .hit-content em {
   font-style: normal;
-  color: #30a137;
-  border-bottom: solid 1px #30a137;
+  color: #ea008a;
+  border-bottom: solid 1px #ea008a;
 }
 
 .hit-content p {
@@ -191,8 +191,8 @@ header img {
 }
 #pagination li.ais-pagination--item__active a {
   color: white;
-  border-color: #30a137;
-  background: #30a137;
+  border-color: #ea008a;
+  background: #ea008a;
 }
 #pagination li.ais-pagination--item__active a:hover {
   cursor: default;
@@ -333,13 +333,13 @@ header img {
 .ais-menu--item__active .ais-menu--link,
 .ais-hierarchical-menu--list .facet-item.active:hover,
 .ais-hierarchical-menu--list .facet-item.active {
-  color: #30a137;
+  color: #ea008a;
 }
 .ais-refinement-list--item__active .ais-refinement-list--label:hover,
 .ais-menu--item__active .ais-menu--link:hover,
 .ais-hierarchical-menu--list .facet-item.active:hover {
   text-decoration: line-through;
-  color: #30a137;
+  color: #ea008a;
 }
 .ais-refinement-list--count,
 .ais-hierarchical-menu--count,
@@ -419,11 +419,11 @@ a.clear-all:hover {
 }
 
 .ais-range-slider--connect {
-  background: #30a137;
+  background: #ea008a;
 }
 
 .ais-range-slider--handle {
-  border-color: #30a137;
+  border-color: #ea008a;
 }
 
 .ais-body.ais-range-slider--body {
@@ -533,9 +533,9 @@ footer {
 }
 footer a {
   text-decoration: none;
-  color: #30a137;
+  color: #ea008a;
 }
 footer a:hover {
   text-decoration: underline;
-  color: #30a137;
+  color: #ea008a;
 }
